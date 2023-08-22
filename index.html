@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border-radius: border-box;
+        }
+
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        #campo{
+            min-width: 100%;
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #campo div{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            border-radius: 100%;
+            position: absolute;
+            transition: all 1s ease-in-out;
+            animation-name: pula;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        input{
+            padding: 20px;
+        }
+
+    
+        @keyframes pula {
+
+            0%{
+                transform: translateY(-500px);
+            }
+            100%{
+                transform: translateY(500px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 style="text-align: center;">BOLA PULA-PULA</h1>
+        
+        <div id="input-botao">
+            <input type="text" id="pedir" placeholder="Didite algum comando">
+            <button onclick="parar()" style="width: 200px; padding: 20px;">Jogar</button>
+        </div>
+       
+        <div id="campo">
+            <div id="bola"></div>
+        </div>
+    </main>
+  
+
+
+
+
+    <script>
+        function parar(){
+            var parar = document.getElementById("pedir").value
+            
+            if (parar == "para"){
+                var bola = document.getElementById("bola").style.animationName = "yellow"
+            }
+            
+            else if (parar == "aumente"){
+                var bola = document.getElementById("bola").style.width = "500px"
+                var bola = document.getElementById("bola").style.height = "500px"
+            }
+
+            else if (parar == "godzilla"){
+                var bola = document.getElementById("bola").style.width = "1000px"
+                var bola = document.getElementById("bola").style.height = "1000px"
+            }
+
+            else if (parar == "volte ao tamanho normal"){
+                var bola = document.getElementById("bola").style.width = "200px"
+                var bola = document.getElementById("bola").style.height = "200px"
+            }
+
+            else if (parar == "diminua"){
+                var bola = document.getElementById("bola").style.width = "50px"
+                var bola = document.getElementById("bola").style.height = "50px"
+            }
+            else if (parar == "continua"){
+                var bola = document.getElementById("bola").style.animationName = "pula"
+            }
+            else if (parar == "verde"){
+                var bola = document.getElementById("bola").style.backgroundColor = "green"
+            }
+            else if (parar == "some"){
+                var bola = document.getElementById("bola").style.display = "none"
+            }
+            else if (parar == "aparece"){
+                var bola = document.getElementById("bola").style.display = "block"
+            }
+
+            else if (parar == "cresça"){
+                var bola = document.getElementById("bola").style.transform = "scale(2)"
+            }
+           
+            else{
+                var bola = document.getElementById("bola").style.animationName = "pula"
+            }
+            
+        }
+    </script>
+   
+</body>
+</html>
